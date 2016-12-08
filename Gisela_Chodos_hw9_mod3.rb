@@ -2,14 +2,15 @@
 
 
 
+
 # prompt the user to enter a zip code.
+#
+# zip - a 5 digit zip code 
 #
 # returns:   an array of six integers. The first five digits are the zip code,
 # 			 the last digit is the checksum.
 #
-def printDigit
-	puts "Please enter a zip code."
-	zip = gets
+def printDigit(zip)
 	zip_array = zip.scan /\d/
 	
 	chksum = 0
@@ -63,6 +64,10 @@ def printBarCode(zip_array)
 	puts barcode
 end
 
+if __FILE__ == $0
+	puts "Please enter a zip code."
+	zip = gets
 
-theZip = printDigit
-printBarCode(theZip)
+	theZip = printDigit(zip)
+	printBarCode(theZip)
+end
